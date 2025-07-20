@@ -2,7 +2,7 @@ package com.board.GFT.persistence.migration;
 
 import liquibase.Liquibase;
 import liquibase.database.jvm.JdbcConnection;
-import liquibase.exception.DatabaseException;
+
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
 import lombok.AllArgsConstructor;
@@ -15,13 +15,14 @@ import java.sql.SQLException;
 
 import static com.board.GFT.persistence.config.ConnectionConfig.getConnection;
 
+
 @AllArgsConstructor
 public class MigrationStrategy {
 
     private  final Connection connection;
 
 
-    private void executeMigration(){
+    public void executeMigration(){
         var originalOut = System.out;
         var originalErr = System.out;
         try {

@@ -1,0 +1,44 @@
+services:
+  app:
+    build:
+
+      context: .
+    command: bash start-dev.sh
+    environment:
+      DB_URL: jdbc:mysql://db:3306/board
+      DB_USER: board
+      DB_PASSWORD: board
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/board-app:z
+    depends_on:
+      - db
+    networks:
+      - board-network
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: board
+      MYSQL_USER: board
+      MYSQL_PASSWORD: board
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - board-network
+
+
+
+networks:
+  board-network:
+    name: board-network
+    external: true
+
+volumes:
+  mysql_data:
+

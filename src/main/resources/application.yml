@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: board
+
+  datasource:
+    url: jdbc:mysql://db:3306/board
+    username: board
+    password: board
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog.sql
+
+  jwt:
+    expiracao: 30
+    chave-assinatura: Q9CqhbvB4c6kH/dj1igps/pTIogfzRNZoAjDMF/UkDg=
