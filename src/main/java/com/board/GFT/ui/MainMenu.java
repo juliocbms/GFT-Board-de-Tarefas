@@ -57,17 +57,17 @@ public class MainMenu {
         for (int i = 0; i < additionalCOlumns; i++) {
             System.out.println("Informe o nome da coluna de tarefa pendente do board");
             var pendingColumnName = scanner.next();
-            var pendingColumn = createColumn(initialColumnName, BoardColumnKindEnum.PENDING, i+1);
+            var pendingColumn = createColumn(pendingColumnName, BoardColumnKindEnum.PENDING, i+1);
             columns.add(pendingColumn);
         }
         System.out.println("Informe o nome da coluna final do board");
         var finalColumnName = scanner.next();
-        var finalColumn = createColumn(initialColumnName, BoardColumnKindEnum.FINAL, additionalCOlumns+1);
+        var finalColumn = createColumn(finalColumnName, BoardColumnKindEnum.FINAL, additionalCOlumns+1);
         columns.add(finalColumn);
 
         System.out.println("Informe o nome da coluna de cancelamento do board");
         var cancelColumnName = scanner.next();
-        var cancelColumn = createColumn(initialColumnName, BoardColumnKindEnum.CANCEL, additionalCOlumns+1);
+        var cancelColumn = createColumn(cancelColumnName, BoardColumnKindEnum.CANCEL, additionalCOlumns+2);
         columns.add(cancelColumn);
 
         entity.setBoardColumns(columns);

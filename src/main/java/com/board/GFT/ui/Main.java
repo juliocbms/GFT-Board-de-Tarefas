@@ -12,5 +12,6 @@ public class Main {
         try( var connection = getConnection()){
             new MigrationStrategy(connection).executeMigration();
         }
+        new MainMenu().execute();
     }
 }

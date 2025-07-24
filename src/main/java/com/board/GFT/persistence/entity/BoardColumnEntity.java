@@ -1,6 +1,7 @@
 package com.board.GFT.persistence.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 public class BoardColumnEntity {
@@ -8,5 +9,6 @@ public class BoardColumnEntity {
     private String name;
     private int order;
     private BoardColumnKindEnum kind;
+
     private BoardEntity board = new BoardEntity();
 }

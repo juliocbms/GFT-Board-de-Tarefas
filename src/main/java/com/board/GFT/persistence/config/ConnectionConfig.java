@@ -12,9 +12,9 @@ import java.sql.SQLException;
 public class ConnectionConfig {
 
     public static Connection getConnection() throws SQLException {
-        String url = System.getenv("DB_URL");
-        String user = System.getenv("DB_USER");
-        String password = System.getenv("DB_PASSWORD");
+        String url = "jdbc:mysql://localhost:3306/board";
+        String user = "board";
+        String password = "board";
         var connection = DriverManager.getConnection(url, user, password);
         connection.setAutoCommit(false);
         return  connection;
