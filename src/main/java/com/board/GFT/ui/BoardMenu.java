@@ -4,6 +4,7 @@ import com.board.GFT.dto.BoardColumnInfoDTO;
 import com.board.GFT.persistence.entity.BoardColumnEntity;
 import com.board.GFT.persistence.entity.BoardEntity;
 import com.board.GFT.persistence.entity.CardEntity;
+import com.board.GFT.service.BoardColumnQueryService;
 import com.board.GFT.service.BoardQueryService;
 import com.board.GFT.service.CardQueryService;
 import lombok.AllArgsConstructor;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import static com.board.GFT.persistence.config.ConnectionConfig.getConnection;
+
 
 @AllArgsConstructor
 public class BoardMenu {

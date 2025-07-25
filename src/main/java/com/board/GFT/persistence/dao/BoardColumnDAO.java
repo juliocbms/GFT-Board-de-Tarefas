@@ -39,11 +39,11 @@ public class BoardColumnDAO {
         }
     }
 
-    public List<BoardColumnEntity> findByBoardId(final Long id) throws SQLException {
+    public List<BoardColumnEntity> findByBoardId(final Long boardId) throws SQLException{
         List<BoardColumnEntity> entities = new ArrayList<>();
-        var sql = "SELECT id,name,`order`,kind FROM BOARDS_COLUMNS WHERE board_id = ? ORDER BY `order`;";
-        try(var statement = connection.prepareStatement(sql)) {
-            statement.setLong(1,id);
+        var sql = "SELECT id, name, `order`, kind FROM BOARDS_COLUMNS WHERE board_id = ? ORDER BY `order`";
+        try(var statement = connection.prepareStatement(sql)){
+            statement.setLong(1, boardId);
             statement.executeQuery();
             var resultSet = statement.getResultSet();
             while (resultSet.next()){
@@ -56,7 +56,6 @@ public class BoardColumnDAO {
             }
             return entities;
         }
-
     }
 
     public List<BoardColumnDTO> findByBoardIdWithDetails(final Long boardId) throws SQLException {
